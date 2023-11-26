@@ -1,0 +1,77 @@
+// Variables Sass
+$primary-color: #0F1014;
+$secondary-color: white;
+$background-color: black;
+$font-stack: 'Montserrat', sans-serif;
+$base-font-size: 3rem;
+$background-gradient-start: rgba(0, 0, 0, 0.7);
+$background-gradient-end: rgba(0, 0, 0, 0.3);
+
+.main {
+  background-color: $background-color;
+}
+
+.viewtrailer {
+  min-height: 700px;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: flex-end;
+
+  .boton { // Anidación de selectores
+    background-color: $primary-color;
+    color: $secondary-color;
+    outline: none;
+    border: 1px solid $secondary-color;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &:hover { // Efecto hover para botones
+      background-color: darken($primary-color, 10%);
+      border-color: $secondary-color;
+    }
+  }
+
+  .reproductor { // Interpolación
+    width: 100%;
+    height: #{700 - 100}px; // Ejemplo de interpolación
+  }
+}
+
+.title-enhanced {
+  font-size: $base-font-size;
+  font-weight: bold;
+  color: #e3e3e3;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: $font-stack;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+
+  &:hover { // Anidación de pseudo-clases
+    transform: scale(1.05);
+  }
+}
+
+.btn {
+  background-color: $background-color;
+}
+
+@media (max-width: 768px) { // Media query para diseño responsivo
+  .viewtrailer {
+    .boton {
+      padding: 8px 10px; // Ajusta el tamaño en pantallas más pequeñas
+    }
+
+    .reproductor {
+      height: 300px; // Altura ajustada para dispositivos móviles
+    }
+  }
+}
